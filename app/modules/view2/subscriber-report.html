@@ -1,0 +1,18 @@
+<div ng-controller="subscriberReportCtrl">
+  <table class="table">
+    <tr>
+      <td>Subscriber Name</td>
+      <td>Video</td>
+      <td>Play</td>
+      <td>Click</td>
+    </tr>
+    <tr ng-repeat="row in data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+      <td>{{row.subscriber_name}}</td>
+      <td>{{row.path}}</td>
+      <td>{{row.totalPlay}}</td>
+      <td>{{row.totalClick}}</td>
+    </tr>
+  </table>
+  <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+
+</div>

@@ -1,0 +1,22 @@
+<div ng-controller="publisherCtrl">
+    <table class="table">
+        <tr>
+            <td>Full Name</td>
+            <td>Email</td>
+            <td>Phone Number</td>
+            <td>Domain</td>
+            <td>Click</td>
+        </tr>
+        <tr ng-repeat="row in data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+            <td>{{row.full_name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.phone_no}}</td>
+            <td>{{row.domain}}</td>
+            <td>{{row.click}}</td>
+        </tr>
+    </table>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+
+
+
+</div>
